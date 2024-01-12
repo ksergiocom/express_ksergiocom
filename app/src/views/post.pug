@@ -1,0 +1,9 @@
+extends ./_base
+
+block content
+    a(href="/") &larr; Volver
+
+    article(class="mt-2 flex flex-col justify-center") 
+        h1= post.titulo
+        p= fecha
+        div(class="flex flex-col gap-3 align-center") !{parsedPost}

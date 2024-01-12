@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    font-family: monospace;
+}
+
+a{
+    @apply text-yellow-300 underline hover:text-yellow-500;
+}
+
+h1{
+    @apply text-yellow-300 text-4xl tracking-tighter;
+}
+
+h2{
+    @apply text-yellow-300 text-2xl tracking-tighter;
+}
+
+h3{
+    @apply text-yellow-300 text-xl tracking-tighter;
+}
+
+pre{
+    @apply bg-stone-700 text-stone-100 p-5 w-fit max-w-full overflow-scroll;
+}
