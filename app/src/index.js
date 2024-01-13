@@ -37,8 +37,9 @@ app.all('/:slug', async (req,res) => {
 
     const fecha = new Date(post.fecha).toLocaleDateString('es')
     const parsedPost = sanitizeHtml(marked.parse(post.post),{
-        allowedTags:['img','h1','h2','h3','strong','i','a','strong','ul','li','ol','code','pre']
+        allowedTags:['p','img','h1','h2','h3','strong','i','a','strong','ul','li','ol','code','pre']
     })
+
     return res.render('post.pug',{post, parsedPost, fecha})
 })
 
