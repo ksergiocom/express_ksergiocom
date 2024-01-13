@@ -1,9 +1,12 @@
 /*
-    Si, esta todo metido en un único archivo.
-    Es un proyecto tan pequeño que ni me he molestado :)
+    Si, está todo en un mismo archivo, ¿Que pasa?
+    Ahora en serio, era un proyecto tan pequeño que lo
+    he comprimido todo aquí. Creo que no era necesario 
+    complicarlo más de la cuenta :)
 */
 
 require('express-async-errors')
+const helmet = require('helmet')
 const marked = require('marked')
 const sanitizeHtml = require('sanitize-html')
 const express = require('express')
@@ -16,6 +19,7 @@ const MONGO_URI = process.env.MONGO_URI
 const client = new mongo.MongoClient(MONGO_URI)
 const db = client.db(process.env.MONGO_DB)
 
+app.use(helmet())
 app.set('views', __dirname+'/views')
 app.set('view engine', 'pug')
 

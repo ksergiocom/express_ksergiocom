@@ -7,7 +7,5 @@ services:
     volumes:
       - ./app:/usr/src/app
     environment:
-      - NODE_ENV="development"
-      - PORT=3000
-      - MONGO_URI="mongodb://localhost:27017"
+      - .env
     command: npm start
