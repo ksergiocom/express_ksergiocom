@@ -6,6 +6,6 @@ services:
       - "3000:3000"
     volumes:
       - ./app:/usr/src/app
-    environment:
+    env_file:
       - .env
     command: npm start
