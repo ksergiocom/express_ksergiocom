@@ -5,13 +5,10 @@ FROM node:20
 WORKDIR /usr/src/app
 
 # Copiar el archivo package.json y package-lock.json (si está disponible)
-COPY app/package*.json ./
+COPY app/ ./
 
 # Instalar las dependencias del proyecto
 RUN npm install
-
-# Copiar los archivos del proyecto
-COPY app/ .
 
 # Exponer el puerto que utiliza tu aplicación (docker-compose.yml sobreescribe este comando)
 EXPOSE 3000

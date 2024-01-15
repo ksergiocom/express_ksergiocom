@@ -5,6 +5,7 @@
     complicarlo más de la cuenta :)
 */
 
+require('dotenv').config()
 require('express-async-errors')
 const helmet = require('helmet')
 const marked = require('marked')
@@ -26,7 +27,7 @@ app.set('view engine', 'pug')
 app.use('/static', express.static(__dirname+'/static'))
 
 app.all('/', async (req,res) => {
-    const posts = await db.collection('posts').find().toArray()
+    const posts = await db.collection('posts').find().sort({fecha:'desc'}).toArray()
     return res.render('index.pug', {posts})
 })
 
