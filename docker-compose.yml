@@ -7,3 +7,5 @@ services:
     env_file:
       - .env
     command: npm start
+    volumes:
+      - ./app/src/static/img:/app/src/static/img
