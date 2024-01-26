@@ -25,10 +25,15 @@ app.set('views', __dirname+'/views')
 app.set('view engine', 'pug')
 
 app.use('/static', express.static(__dirname+'/static'))
+app.use(express.static(__dirname+'/robots'))
 
 app.all('/', async (req,res) => {
     const posts = await db.collection('posts').find().sort({fecha:'desc'}).toArray()
     return res.render('index.pug', {posts})
+})
+
+app.all('/robots.txt', (req,res) => {
+    return res.sendFile(__dirname+'/static/robots.txt')
 })
 
 app.all('/:slug', async (req,res) => {

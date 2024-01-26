@@ -4,4 +4,4 @@ block content
     p Esta es mi página personal de <strong>notas y recordatorios</strong> relacionados con la programación en general, un lugar donde encontrar indicaciones rápidas. ¡No pretende ser algo didáctico!
     ul(class="mt-5") 
         each post in posts
-            li(class="text-lg py-3"): a(href=`/${post.slug}`) #{post.titulo}
+            li(class="my-2"): a(href=`/${post.slug}`) #{post.titulo}
